@@ -1,0 +1,50 @@
+// Function to show the note input field based on the selected note type
+function showNoteInput() {
+    const noteTypeSelect = document.getElementById("noteType");
+    const noteType = noteTypeSelect.value;
+    const noteInput = document.getElementById("noteInput");
+    const noteInputWrapper = document.getElementById("noteInputWrapper");
+  
+    if (noteType !== "") {
+      noteInput.style.display = "block";
+      noteInputWrapper.style.display = "block";
+    } else {
+      noteInput.style.display = "none";
+      noteInputWrapper.style.display = "none";
+    }
+  }
+  
+  // Function to add a new note
+  function addNote() {
+    const noteInput = document.getElementById("noteInput");
+    const noteText = noteInput.value;
+  
+    if (noteText.trim() !== "") {
+      notes.push({ text: noteText });
+      noteInput.value = ""; // Clear the input field
+      displayNotes(); // Update the note list display
+    }
+  }
+  
+  // Function to display all notes
+  function displayNotes() {
+    const noteList = document.getElementById("noteList");
+    noteList.innerHTML = ""; // Clear the note list before displaying
+  
+    if (notes.length === 0) {
+      noteList.textContent = "No notes found.";
+    } else {
+      notes.forEach((note, index) => {
+        const listItem = document.createElement("div");
+        listItem.classList.add("notePreview");
+  
+        const noteText = document.createElement("span");
+        noteText.textContent = note.text;
+  
+        listItem.appendChild(noteText);
+  
+        noteList.appendChild(listItem);
+      });
+    }
+  }
+  

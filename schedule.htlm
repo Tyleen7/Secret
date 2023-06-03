@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Summer Schedule</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="access.html">
+
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Summer Schedule</h1>
+    <table id="scheduleTable"></table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
